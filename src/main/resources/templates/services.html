@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Рекламное агентство</title>
+</head>
+<body>
+<h1>Рекламное агентство</h1><hr>
+<h4>Предоставляемые услуги </h4>
+<form action="/services" method="get">
+    Поиск услуги: <input type="text" name="name"><br>
+    <input type="submit" value="Поиск"/>
+</form>
+<#list listServices as application>
+    <div>
+        <p><b>${application.name}</b> ${application.phoneNumber} | <a href="/application/${application.applicationServiceId}">Подробнее...</a></p>
+    </div>
+</#list >
+<hr>
+
+
+</form>
+</body>
+</html>

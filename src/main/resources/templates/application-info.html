@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Рекламное агентство</title>
+</head>
+<body>
+
+<h1>Рекламное агентство</h1><hr>
+<h4>Подробная информация о заявке</h4>
+<b>Имя Фамилия: </b>${application.name}<br>
+<b>Номер телефона: </b>${application.phoneNumber}<br>
+<b>Email: </b>${application.clientEmail}<br>
+<b>Название компании: </b>${application.companyName}<br>
+<b>Услуга: </b>${application.services}<br>
+<b>Описание: </b>${application.name}<br>
+<b>Имя Фамилия: </b>${application.description}<br>
+<b>Дата начала: </b>${application.startDate}<br>
+<hr>
+<h3>Заполните заявку</h3>
+<form action="/application/delete/${application.applicationServiceId}" method="post">
+    <input type="submit" value="Удалить заявку"/>
+</form>
+</body>
+</html>
