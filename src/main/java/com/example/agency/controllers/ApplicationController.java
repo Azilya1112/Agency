@@ -13,10 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
-public class MainController {
-
+public class ApplicationController {
     private final ApplicationService applicationService;
-
 
     @GetMapping("/application")
     public String applications(@RequestParam(name="name", required = false) String name, Model model) {
@@ -30,6 +28,11 @@ public class MainController {
         return "application-info";
     }
 
+//    @GetMapping("/getAll")
+//    public String getAll(Model model) {
+//        model.addAttribute("employers", applicationService.findAll());
+//        return "listOfApplication";
+//    }
 
     @PostMapping("/application/create")
     public String createApplication(Application application) {
@@ -43,11 +46,4 @@ public class MainController {
         return "redirect:/";
     }
 
-
-//
-//    @GetMapping("/home")
-//    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-//        model.addAttribute("name", name);
-//        return "home";
-//    }
 }
