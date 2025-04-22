@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta http-equiv="Content-Type"  content="text/html; charset=UTF-8"/>
+    <title>Рекламное агентство</title>
+</head>
+<body>
+<h1>Рекламное агентство</h1><hr>
+<h4>Подробная информация о заявке</h4>
+<div class="container mt-5">
+    <div th:each="el : ${application}" class="alert alert-info mt-2">
+        <p th:text="${el.name}"/>
+        <p th:number="${el.phoneNumber}"/>
+        <p th:text="${el.clientEmail}"/>
+        <p th:text="${el.companyName}"/>
+        <p th:text="${el.services}"/>
+        <p th:text="${el.description}"/>
+        <p th:number="${el.startDate}"/>
+    </div>
+</div>
+
+<!--<#&#45;&#45;<b>Имя Фамилия: </b>${application.name}<br>&ndash;&gt;-->
+<!--<#&#45;&#45;<b>Номер телефона: </b>${application.phoneNumber}<br>&ndash;&gt;-->
+<!--<#&#45;&#45;<b>Email: </b>${application.clientEmail}<br>&ndash;&gt;-->
+<!--<#&#45;&#45;<b>Название компании: </b>${application.companyName}<br>&ndash;&gt;-->
+<!--<#&#45;&#45;<b>Услуга: </b>${application.services}<br>&ndash;&gt;-->
+<!--<#&#45;&#45;<b>Описание: </b>${application.name}<br>&ndash;&gt;-->
+<!--<#&#45;&#45;<b>Имя Фамилия: </b>${application.description}<br>&ndash;&gt;-->
+<!--<#&#45;&#45;<b>Дата начала: </b>${application.startDate}<br>&ndash;&gt;-->
+<!--<#&#45;&#45;<hr>&ndash;&gt;-->
+<!--<#&#45;&#45;<h3>Заполните заявку</h3>&ndash;&gt;-->
+<form action="/application/delete/${application.applicationServiceId}" method="post">
+    <input type="submit" value="Удалить заявку"/>
+</form>
+</body>
+</html>
